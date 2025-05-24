@@ -5,7 +5,7 @@
 ## ✨ 功能特性
 
 - 🔄 **自动抓取**: 每天定时从多个Web3工作网站抓取最新工作
-- 🌐 **多平台支持**: 支持CryptoJobsList、Web3.career、AngelCo等主流平台
+- 🌐 **多平台支持**: 支持Remote3.co、CryptoRecruit.com等主流Web3工作平台
 - 🈯 **中文翻译**: 自动将工作描述翻译成中文，支持OpenAI和Google翻译
 - 📧 **邮件推送**: 每日工作报告邮件推送
 - 🔍 **智能搜索**: 支持关键词搜索、远程工作筛选等
@@ -152,9 +152,9 @@ POST /api/scrape
 
 ## 🌐 支持的工作网站
 
-1. **CryptoJobsList** - 专业的加密货币工作平台
-2. **Web3.career** - Web3专业工作平台
-3. **AngelCo** - 创业公司工作平台（Web3相关）
+1. **Remote3.co** - 专业的远程Web3工作平台
+2. **CryptoRecruit.com** - 专业的加密货币和区块链工作平台
+3. **SimpleWeb3Scraper** - 演示用的Web3工作数据源
 
 ## 🔄 扩展新的工作网站
 

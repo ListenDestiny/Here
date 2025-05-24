@@ -55,7 +55,12 @@
                         <h3><i class="fas fa-download"></i> 数据抓取</h3>
                     </div>
                     <div class="card-body">
-                        <p>手动触发工作抓取任务，从所有配置的网站抓取最新工作信息。</p>
+                        <p>手动触发工作抓取任务，从以下网站抓取最新工作信息：</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success"></i> Web3工作演示数据源</li>
+                            <li><i class="fas fa-check text-success"></i> Remote3.co (远程Web3工作)</li>
+                            <li><i class="fas fa-check text-success"></i> CryptoRecruit.com (加密货币招聘)</li>
+                        </ul>
                         <form method="post" action="/admin/scrape">
                             <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.innerHTML='<i class=\'fas fa-spinner fa-spin\'></i> 抓取中...'; this.form.submit();">
                                 <i class="fas fa-download"></i> 立即抓取工作

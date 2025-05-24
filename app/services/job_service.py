@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
 from ..models.job import Job
 from ..scrapers.simple_scraper import SimpleWeb3Scraper
+from ..scrapers.remote3_scraper import Remote3Scraper
+from ..scrapers.cryptorecruit_scraper import CryptoRecruitScraper
 from .translation_service import TranslationService
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
@@ -11,11 +13,13 @@ class JobService:
         self.db = db
         self.translation_service = TranslationService()
         self.scrapers = [
-            SimpleWeb3Scraper()
+            SimpleWeb3Scraper(),
+            Remote3Scraper(),
+            CryptoRecruitScraper()
         ]
     
     def scrape_all_jobs(self, limit_per_site: int = 20) -> List[Dict[str, Any]]:
-        """从所有网站抓取工作"""
+        """从所有网站抓取工作并保存到数据库"""
         all_jobs = []
         
         for scraper in self.scrapers:
@@ -38,11 +42,19 @@ class JobService:
             except Exception as e:
                 print(f"抓取 {scraper.name} 时出错: {e}")
         
+        # 保存所有工作到数据库
+        if all_jobs:
+            saved_count = self.save_jobs_to_db(all_jobs)
+            print(f"总共保存了 {saved_count} 个新工作到数据库")
+        
         return all_jobs
     
     def save_jobs_to_db(self, jobs_data: List[Dict[str, Any]]) -> int:
         """保存工作到数据库"""
         saved_count = 0
+        
+        # 获取Job模型的有效字段
+        valid_fields = {column.name for column in Job.__table__.columns}
         
         for job_data in jobs_data:
             try:
@@ -53,15 +65,20 @@ class JobService:
                     # 翻译工作信息
                     translated_data = self.translation_service.translate_job_fields(job_data)
                     
+                    # 过滤掉无效字段
+                    filtered_data = {k: v for k, v in translated_data.items() if k in valid_fields}
+                    
                     # 创建新工作记录
-                    job = Job(**translated_data)
+                    job = Job(**filtered_data)
                     self.db.add(job)
                     saved_count += 1
                 else:
                     # 更新现有记录（如果需要翻译）
                     if not existing_job.is_translated:
                         translated_data = self.translation_service.translate_job_fields(job_data)
-                        for key, value in translated_data.items():
+                        # 过滤掉无效字段
+                        filtered_data = {k: v for k, v in translated_data.items() if k in valid_fields}
+                        for key, value in filtered_data.items():
                             if hasattr(existing_job, key):
                                 setattr(existing_job, key, value)
                 

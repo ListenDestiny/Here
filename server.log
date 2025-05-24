@@ -1,0 +1,167 @@
+INFO:     Started server process [2531]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 12001): [errno 98] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Web3工作抓取器启动中...
+定时任务已设置:
+- 每天 09:00 和 18:00 抓取工作
+- 每2小时更新翻译
+调度器开始运行...
+调度器线程已启动
+应用启动完成
+正在关闭应用...
+调度器已停止
+应用已关闭
+4.24:33180 - "GET /css/style.css HTTP/1.1" 200 OK
+INFO:     10.2.34.24:33180 - "GET /js/app.js HTTP/1.1" 200 OK
+INFO:     10.2.34.24:33182 - "GET /jobs HTTP/1.1" 200 OK
+INFO:     10.2.34.24:38568 - "GET /jobs?search=&source=Remote3 HTTP/1.1" 200 OK
+INFO:     10.2.34.24:33000 - "GET /admin HTTP/1.1" 200 OK
+立即执行抓取任务...
+开始定时抓取工作 - 2025-05-24 03:36:38.471062
+正在抓取 SimpleWeb3Scraper...
+从 SimpleWeb3Scraper 模拟抓取到 4 个工作
+获取工作详情失败 https://example.com/job/1: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/8: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/2: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/6: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+从 SimpleWeb3Scraper 抓取到 4 个工作
+正在抓取 Remote3...
+从 Remote3 模拟抓取到 6 个远程Web3工作
+从 Remote3 抓取到 6 个工作
+正在抓取 CryptoRecruit...
+从 CryptoRecruit 模拟抓取到 3 个加密货币工作
+从 CryptoRecruit 抓取到 3 个工作
+成功保存 7 个新工作到数据库
+总共保存了 7 个新工作到数据库
+总共抓取到 13 个工作
+成功保存 0 个新工作到数据库
+保存了 0 个新工作
+邮件配置不完整，跳过发送邮件
+每日工作报告发送失败
+邮件配置不完整，跳过发送邮件
+INFO:     10.2.34.24:45184 - "POST /admin/scrape HTTP/1.1" 303 See Other
+INFO:     10.2.56.141:57858 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:45102 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     10.2.34.24:45184 - "GET /admin?message=%E6%8A%93%E5%8F%96%E4%BB%BB%E5%8A%A1%E5%B7%B2%E5%90%AF%E5%8A%A8 HTTP/1.1" 200 OK
+INFO:     10.2.56.141:57858 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:45082 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:52394 - "GET /jobs HTTP/1.1" 200 OK
+INFO:     10.2.34.24:52394 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:53030 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:53030 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:54592 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:53904 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:53864 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:53864 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.0.146:35796 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.0.146:35796 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.0.146:35796 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.0.146:35796 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.17.15:50554 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:57816 - "GET /jobs?search=&source=Remote3 HTTP/1.1" 200 OK
+INFO:     10.2.1.63:50704 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:50704 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:48742 - "GET /admin HTTP/1.1" 200 OK
+INFO:     10.2.17.15:33372 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:59072 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:57276 - "GET / HTTP/1.1" 200 OK
+立即执行抓取任务...
+开始定时抓取工作 - 2025-05-24 03:38:16.761018
+正在抓取 SimpleWeb3Scraper...
+从 SimpleWeb3Scraper 模拟抓取到 5 个工作
+获取工作详情失败 https://example.com/job/2: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/4: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/8: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/3: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/5: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+从 SimpleWeb3Scraper 抓取到 5 个工作
+正在抓取 Remote3...
+从 Remote3 模拟抓取到 5 个远程Web3工作
+从 Remote3 抓取到 5 个工作
+正在抓取 CryptoRecruit...
+从 CryptoRecruit 模拟抓取到 6 个加密货币工作
+从 CryptoRecruit 抓取到 6 个工作
+成功保存 4 个新工作到数据库
+总共保存了 4 个新工作到数据库
+总共抓取到 16 个工作
+成功保存 0 个新工作到数据库
+保存了 0 个新工作
+邮件配置不完整，跳过发送邮件
+每日工作报告发送失败
+邮件配置不完整，跳过发送邮件
+INFO:     10.2.34.24:40340 - "POST /admin/scrape HTTP/1.1" 303 See Other
+INFO:     10.2.31.12:57276 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:40340 - "GET /admin?message=%E6%8A%93%E5%8F%96%E4%BB%BB%E5%8A%A1%E5%B7%B2%E5%90%AF%E5%8A%A8 HTTP/1.1" 200 OK
+INFO:     10.2.31.12:57276 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.0.146:37818 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:36346 - "GET /jobs HTTP/1.1" 200 OK
+INFO:     10.2.152.3:52490 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:52490 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:34176 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:34176 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:34176 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:34176 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.56.141:60958 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.17.15:56290 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:54708 - "GET /jobs?search=&source=Remote3 HTTP/1.1" 200 OK
+INFO:     10.2.17.15:56290 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:56128 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:56128 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:50986 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:44130 - "GET /admin HTTP/1.1" 200 OK
+INFO:     10.2.152.3:50986 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:50986 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:57286 - "GET / HTTP/1.1" 200 OK
+立即执行抓取任务...
+开始定时抓取工作 - 2025-05-24 03:39:32.047747
+正在抓取 SimpleWeb3Scraper...
+从 SimpleWeb3Scraper 模拟抓取到 5 个工作
+获取工作详情失败 https://example.com/job/6: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/7: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/5: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/2: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+获取工作详情失败 https://example.com/job/8: 'SimpleWeb3Scraper' object has no attribute 'parse_job_detail'
+从 SimpleWeb3Scraper 抓取到 5 个工作
+正在抓取 Remote3...
+从 Remote3 模拟抓取到 4 个远程Web3工作
+从 Remote3 抓取到 4 个工作
+正在抓取 CryptoRecruit...
+从 CryptoRecruit 模拟抓取到 4 个加密货币工作
+从 CryptoRecruit 抓取到 4 个工作
+成功保存 1 个新工作到数据库
+总共保存了 1 个新工作到数据库
+总共抓取到 13 个工作
+成功保存 0 个新工作到数据库
+保存了 0 个新工作
+邮件配置不完整，跳过发送邮件
+每日工作报告发送失败
+邮件配置不完整，跳过发送邮件
+INFO:     10.2.34.24:49168 - "POST /admin/scrape HTTP/1.1" 303 See Other
+INFO:     10.2.34.24:49168 - "GET /admin?message=%E6%8A%93%E5%8F%96%E4%BB%BB%E5%8A%A1%E5%B7%B2%E5%90%AF%E5%8A%A8 HTTP/1.1" 200 OK
+INFO:     10.2.39.149:38854 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:38854 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:38854 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:38854 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:44184 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:44184 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.31.12:45062 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:58092 - "GET /jobs HTTP/1.1" 200 OK
+INFO:     10.2.39.149:53770 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:53770 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:53770 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.17.15:43564 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:52932 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:33332 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:33332 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:48208 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:46526 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:46526 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.39.149:46526 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:34558 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:34558 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:41830 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     10.2.1.63:34558 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.1.63:34558 - "GET / HTTP/1.1" 200 OK

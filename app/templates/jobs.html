@@ -20,7 +20,9 @@
                         <div class="col-md-3">
                             <select class="form-select" name="source">
                                 <option value="">所有来源</option>
-                                <option value="SimpleWeb3Scraper" {% if source == 'SimpleWeb3Scraper' %}selected{% endif %}>SimpleWeb3Scraper</option>
+                                <option value="SimpleWeb3Scraper" {% if source == 'SimpleWeb3Scraper' %}selected{% endif %}>Web3工作演示</option>
+                                <option value="Remote3" {% if source == 'Remote3' %}selected{% endif %}>Remote3.co</option>
+                                <option value="CryptoRecruit" {% if source == 'CryptoRecruit' %}selected{% endif %}>CryptoRecruit.com</option>
                             </select>
                         </div>
                         <div class="col-md-3">
