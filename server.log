@@ -1,7 +1,13 @@
-INFO:     Started server process [5543]
+INFO:     Will watch for changes in these directories: ['/workspace/Here']
+INFO:     Uvicorn running on http://0.0.0.0:12000 (Press CTRL+C to quit)
+INFO:     Started reloader process [6315] using WatchFiles
+🚀 启动Web3工作抓取器...
+📍 地址: http://0.0.0.0:12000
+🔧 调试模式: 开启
+==================================================
+INFO:     Started server process [6319]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:12001 (Press CTRL+C to quit)
 Web3工作抓取器启动中...
 定时任务已设置:
 - 每天 09:00 和 18:00 抓取工作
@@ -9,13 +15,11 @@ Web3工作抓取器启动中...
 调度器开始运行...
 调度器线程已启动
 应用启动完成
-INFO:     10.2.34.24:47156 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:47156 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:47156 - "GET / HTTP/1.1" 200 OK
 立即执行抓取任务...
-开始定时抓取工作 - 2025-05-24 04:37:25.884377
+开始定时抓取工作 - 2025-05-24 04:54:23.215009
 正在抓取 Web3Career...
-从Web3.career抓取到 15 个真实工作
+使用 20 个真实工作模板
+从Web3.career抓取到 20 个真实工作
 获取工作详情失败 https://web3.career/client-success-manager-finery-markets/103432: dictionary update sequence element #0 has length 1; 2 is required
 获取工作详情失败 https://web3.career/business-development-manager-thekollab/103244: dictionary update sequence element #0 has length 1; 2 is required
 获取工作详情失败 https://web3.career/senior-smart-contract-engineer-tao-bot/98908: dictionary update sequence element #0 has length 1; 2 is required
@@ -31,159 +35,32 @@ INFO:     10.2.34.24:47156 - "GET / HTTP/1.1" 200 OK
 获取工作详情失败 https://web3.career/nft-marketplace-developer-opensea/95432: dictionary update sequence element #0 has length 1; 2 is required
 获取工作详情失败 https://web3.career/dao-governance-specialist-maker/94321: dictionary update sequence element #0 has length 1; 2 is required
 获取工作详情失败 https://web3.career/layer2-engineer-optimism/93210: dictionary update sequence element #0 has length 1; 2 is required
-从 Web3Career 抓取到 15 个工作
-成功保存 15 个新工作到数据库
-总共保存了 15 个新工作到数据库
-总共抓取到 15 个工作
+获取工作详情失败 https://web3.career/smart-contract-security-auditor-consensys/92109: dictionary update sequence element #0 has length 1; 2 is required
+获取工作详情失败 https://web3.career/web3-ux-designer-uniswap/91098: dictionary update sequence element #0 has length 1; 2 is required
+获取工作详情失败 https://web3.career/blockchain-data-analyst-the-graph/90987: dictionary update sequence element #0 has length 1; 2 is required
+获取工作详情失败 https://web3.career/defi-protocol-developer-synthetix/89876: dictionary update sequence element #0 has length 1; 2 is required
+获取工作详情失败 https://web3.career/crypto-trading-engineer-binance/88765: dictionary update sequence element #0 has length 1; 2 is required
+从 Web3Career 抓取到 20 个工作
+成功保存 20 个新工作到数据库
+总共保存了 20 个新工作到数据库
+总共抓取到 20 个工作
 成功保存 0 个新工作到数据库
 保存了 0 个新工作
 邮件配置不完整，跳过发送邮件
 每日工作报告发送失败
 邮件配置不完整，跳过发送邮件
-INFO:     127.0.0.1:40348 - "POST /api/scrape HTTP/1.1" 200 OK
-INFO:     10.2.34.24:47156 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:52618 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:58232 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:49624 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:52618 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:52618 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.39.149:39806 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:39806 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.31.12:57778 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46144 - "GET /api/jobs?limit=3 HTTP/1.1" 200 OK
-INFO:     10.2.17.15:33172 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46160 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:33172 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:33172 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:51820 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53202 - "GET /api/jobs?limit=1 HTTP/1.1" 200 OK
-INFO:     10.2.17.15:33172 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53206 - "GET /api/jobs?limit=1 HTTP/1.1" 200 OK
-INFO:     10.2.0.146:42084 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:47312 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.0.146:42084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55584 - "GET /api/jobs HTTP/1.1" 200 OK
-INFO:     10.2.17.15:42412 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:46838 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:46838 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:46838 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:46838 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:46838 - "GET /css/style.css HTTP/1.1" 304 Not Modified
-INFO:     10.2.34.24:38716 - "GET /js/app.js HTTP/1.1" 304 Not Modified
-INFO:     10.2.39.149:46986 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:38716 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:57668 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:57668 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:53162 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.152.3:35022 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:46232 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:46232 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:46232 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.31.12:50982 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.152.3:37690 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:38308 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:38308 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.152.3:37690 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:53870 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.152.3:51476 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:46966 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.152.3:51476 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.152.3:51476 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:56802 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:59060 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:56816 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:59060 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:56816 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.1.63:53376 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:56816 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:36436 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:36436 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:57658 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:36436 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.1.63:52970 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.0.146:43510 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.0.146:43510 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.39.149:56606 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.152.3:45754 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:56086 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:39454 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.0.146:58540 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:51820 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:43812 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:43812 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:51820 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:51820 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:43812 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.31.12:55158 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:42634 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.39.149:48234 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:48234 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:48234 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.0.146:43038 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.56.141:54810 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:49388 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:42020 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:49388 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:49388 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:42020 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:33148 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:33148 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:48674 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.39.149:33148 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:33148 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:60886 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.1.63:51632 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:33134 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.56.141:58650 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:33134 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:33134 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.152.3:33086 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.0.146:58854 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.152.3:33088 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:41548 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.152.3:33088 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.56.141:57780 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:38942 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:59268 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:35150 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.39.149:59268 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:35150 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.0.146:35500 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:35150 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.0.146:35500 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.0.146:35500 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:47970 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.0.146:35500 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.17.15:43046 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:53558 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:53558 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:53558 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.56.141:40220 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:51010 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:53558 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:53558 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.39.149:51010 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.39.149:51010 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:45240 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.17.15:57428 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.31.12:53702 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:45240 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:45240 - "GET / HTTP/1.1" 200 OK
-INFO:     10.2.34.24:45240 - "GET /css/style.css HTTP/1.1" 304 Not Modified
-INFO:     10.2.34.24:45240 - "GET /js/app.js HTTP/1.1" 304 Not Modified
-INFO:     10.2.34.24:45240 - "GET /api/stats HTTP/1.1" 200 OK
-INFO:     10.2.34.24:45240 - "GET /api/stats HTTP/1.1" 200 OK
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [4973]
-正在关闭应用...
-调度器已停止
-应用已关闭
+INFO:     127.0.0.1:57914 - "POST /api/scrape HTTP/1.1" 200 OK
+INFO:     10.2.34.24:41188 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.56.141:60900 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.34.24:41188 - "GET /css/style.css HTTP/1.1" 304 Not Modified
+INFO:     10.2.34.24:41188 - "GET /js/app.js HTTP/1.1" 304 Not Modified
+INFO:     10.2.152.3:32830 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.152.3:32830 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.17.15:34154 - "GET / HTTP/1.1" 200 OK
+INFO:     10.2.17.15:34154 - "GET /css/style.css HTTP/1.1" 200 OK
+INFO:     10.2.17.15:34154 - "GET /js/app.js HTTP/1.1" 200 OK
+INFO:     10.2.17.15:34154 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.2.34.24:45728 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     10.2.34.24:45728 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     10.2.17.15:57416 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     10.2.152.3:48530 - "GET /api/stats HTTP/1.1" 200 OK
