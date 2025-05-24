@@ -1,8 +1,6 @@
 from sqlalchemy.orm import Session
 from ..models.job import Job
-from ..scrapers.simple_scraper import SimpleWeb3Scraper
-from ..scrapers.remote3_scraper import Remote3Scraper
-from ..scrapers.cryptorecruit_scraper import CryptoRecruitScraper
+from ..scrapers.real_web3_scraper import RealWeb3Scraper
 from .translation_service import TranslationService
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
@@ -13,9 +11,7 @@ class JobService:
         self.db = db
         self.translation_service = TranslationService()
         self.scrapers = [
-            SimpleWeb3Scraper(),
-            Remote3Scraper(),
-            CryptoRecruitScraper()
+            RealWeb3Scraper()
         ]
     
     def scrape_all_jobs(self, limit_per_site: int = 20) -> List[Dict[str, Any]]:
