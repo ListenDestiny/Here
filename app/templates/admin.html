@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %}管理后台 - Web3工作抓取器{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1><i class="fas fa-cog"></i> 管理后台</h1>
+        
+        <!-- 统计信息 -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-briefcase fa-2x text-primary mb-2"></i>
+                        <h4 class="card-title">{{ stats.total_jobs }}</h4>
+                        <p class="card-text">总工作数</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-clock fa-2x text-success mb-2"></i>
+                        <h4 class="card-title">{{ stats.recent_jobs }}</h4>
+                        <p class="card-text">本周新增</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-home fa-2x text-info mb-2"></i>
+                        <h4 class="card-title">{{ stats.remote_jobs }}</h4>
+                        <p class="card-text">远程工作</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-language fa-2x text-warning mb-2"></i>
+                        <h4 class="card-title">{{ stats.translated_jobs }}</h4>
+                        <p class="card-text">已翻译</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 操作面板 -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-download"></i> 数据抓取</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>手动触发工作抓取任务，从所有配置的网站抓取最新工作信息。</p>
+                        <form method="post" action="/admin/scrape">
+                            <button type="submit" class="btn btn-primary" onclick="this.disabled=true; this.innerHTML='<i class=\'fas fa-spinner fa-spin\'></i> 抓取中...'; this.form.submit();">
+                                <i class="fas fa-download"></i> 立即抓取工作
+                            </button>
+                        </form>
+                        <small class="text-muted">注意: 抓取过程可能需要几分钟时间</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-envelope"></i> 邮件测试</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>测试邮件发送功能是否正常工作。</p>
+                        <form method="post" action="/admin/test-email">
+                            <button type="submit" class="btn btn-info">
+                                <i class="fas fa-paper-plane"></i> 发送测试邮件
+                            </button>
+                        </form>
+                        <small class="text-muted">将发送测试邮件到配置的收件人地址</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 数据来源统计 -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-bar"></i> 数据来源统计</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for source, count in stats.source_stats.items() %}
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{ source }}</h5>
+                                        <h3 class="text-primary">{{ count }}</h3>
+                                        <p class="card-text">个工作</p>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" 
+                                                 style="width: {{ (count / stats.total_jobs * 100) if stats.total_jobs > 0 else 0 }}%">
+                                                {{ "%.1f"|format((count / stats.total_jobs * 100) if stats.total_jobs > 0 else 0) }}%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 系统信息 -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-info-circle"></i> 系统信息</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>定时任务</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-success"></i> 每天 09:00 自动抓取</li>
+                                    <li><i class="fas fa-clock text-success"></i> 每天 18:00 自动抓取</li>
+                                    <li><i class="fas fa-language text-info"></i> 每2小时更新翻译</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>支持的网站</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-globe text-primary"></i> Web3工作演示数据源</li>
+                                    <li><i class="fas fa-info-circle text-info"></i> 包含区块链、DeFi、NFT等职位</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>功能特性</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success"></i> 自动工作抓取</li>
+                                    <li><i class="fas fa-check text-success"></i> 中文翻译</li>
+                                    <li><i class="fas fa-check text-success"></i> 邮件推送</li>
+                                    <li><i class="fas fa-check text-success"></i> 去重处理</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>配置状态</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <i class="fas fa-database text-success"></i> 数据库: 
+                                        <span class="badge bg-success">正常</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-language text-warning"></i> 翻译服务: 
+                                        <span class="badge bg-warning">需配置API</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-envelope text-info"></i> 邮件服务: 
+                                        <span class="badge bg-info">需配置SMTP</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 配置说明 -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-wrench"></i> 配置说明</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5>环境变量配置</h5>
+                        <p>请在 <code>.env</code> 文件中配置以下环境变量:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>翻译服务</h6>
+                                <ul>
+                                    <li><code>OPENAI_API_KEY</code> - OpenAI API密钥（推荐）</li>
+                                    <li><code>GOOGLE_TRANSLATE_API_KEY</code> - Google翻译API密钥</li>
+                                </ul>
+                                
+                                <h6>邮件服务</h6>
+                                <ul>
+                                    <li><code>SMTP_SERVER</code> - SMTP服务器地址</li>
+                                    <li><code>SMTP_PORT</code> - SMTP端口</li>
+                                    <li><code>EMAIL_USER</code> - 发件人邮箱</li>
+                                    <li><code>EMAIL_PASSWORD</code> - 邮箱密码或应用密码</li>
+                                    <li><code>RECIPIENT_EMAIL</code> - 收件人邮箱</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>应用配置</h6>
+                                <ul>
+                                    <li><code>APP_HOST</code> - 应用监听地址（默认: 0.0.0.0）</li>
+                                    <li><code>APP_PORT</code> - 应用端口（默认: 12000）</li>
+                                    <li><code>DEBUG</code> - 调试模式（默认: True）</li>
+                                </ul>
+                                
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-info-circle"></i>
+                                    <strong>提示:</strong> 复制 <code>.env.example</code> 为 <code>.env</code> 并填入相应配置。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

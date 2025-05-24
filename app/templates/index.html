@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - Web3工作抓取器{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron bg-gradient text-white p-5 rounded mb-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <h1 class="display-4">🚀 Web3工作抓取器</h1>
+            <p class="lead">每天自动从多个Web3工作网站抓取最新工作机会，并翻译成中文推送给您</p>
+            <hr class="my-4">
+            <p>支持CryptoJobsList、Web3.career、AngelCo等主流Web3工作平台</p>
+            <a class="btn btn-light btn-lg" href="/jobs" role="button">
+                <i class="fas fa-search"></i> 浏览工作
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 统计信息 -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-briefcase fa-2x text-primary mb-2"></i>
+                <h5 class="card-title">{{ stats.total_jobs }}</h5>
+                <p class="card-text">总工作数</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-clock fa-2x text-success mb-2"></i>
+                <h5 class="card-title">{{ stats.recent_jobs }}</h5>
+                <p class="card-text">本周新增</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-home fa-2x text-info mb-2"></i>
+                <h5 class="card-title">{{ stats.remote_jobs }}</h5>
+                <p class="card-text">远程工作</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="fas fa-language fa-2x text-warning mb-2"></i>
+                <h5 class="card-title">{{ stats.translated_jobs }}</h5>
+                <p class="card-text">已翻译</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 最新工作 -->
+<div class="row">
+    <div class="col-12">
+        <h2><i class="fas fa-star"></i> 最新工作机会</h2>
+        <p class="text-muted">以下是最近一周的工作机会</p>
+        
+        {% if jobs %}
+        <div class="row">
+            {% for job in jobs %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/job/{{ job.id }}" class="text-decoration-none">
+                                {{ job.title_zh if job.title_zh else job.title }}
+                            </a>
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            <i class="fas fa-building"></i> {{ job.company }}
+                        </h6>
+                        
+                        <div class="mb-2">
+                            <small class="text-muted">
+                                <i class="fas fa-map-marker-alt"></i> {{ job.location }}
+                                {% if job.remote %}
+                                <span class="badge bg-success ms-2">远程</span>
+                                {% endif %}
+                            </small>
+                        </div>
+                        
+                        {% if job.salary_min or job.salary_max %}
+                        <div class="mb-2">
+                            <small class="text-success">
+                                <i class="fas fa-dollar-sign"></i>
+                                {% if job.salary_min and job.salary_max %}
+                                {{ "{:,.0f}".format(job.salary_min) }} - {{ "{:,.0f}".format(job.salary_max) }} {{ job.currency }}
+                                {% elif job.salary_min %}
+                                {{ "{:,.0f}".format(job.salary_min) }}+ {{ job.currency }}
+                                {% elif job.salary_max %}
+                                最高 {{ "{:,.0f}".format(job.salary_max) }} {{ job.currency }}
+                                {% endif %}
+                            </small>
+                        </div>
+                        {% endif %}
+                        
+                        {% if job.description_zh or job.description %}
+                        <p class="card-text">
+                            {{ (job.description_zh if job.description_zh else job.description)[:150] }}
+                            {% if (job.description_zh if job.description_zh else job.description)|length > 150 %}...{% endif %}
+                        </p>
+                        {% endif %}
+                        
+                        {% if job.tags %}
+                        <div class="mb-2">
+                            {% for tag in job.tags.split(',')[:3] %}
+                            <span class="badge bg-light text-dark me-1">{{ tag.strip() }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">{{ job.source_website }}</small>
+                            <small class="text-muted">{{ job.scraped_date.strftime('%m-%d') }}</small>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/job/{{ job.id }}" class="btn btn-primary btn-sm">查看详情</a>
+                        <a href="{{ job.url }}" target="_blank" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-external-link-alt"></i> 原链接
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="/jobs" class="btn btn-primary">
+                <i class="fas fa-list"></i> 查看更多工作
+            </a>
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> 暂无工作数据，请稍后再试或手动触发抓取。
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- 数据来源 -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h3><i class="fas fa-database"></i> 数据来源</h3>
+        <div class="row">
+            {% for source, count in stats.source_stats.items() %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ source }}</h5>
+                        <p class="card-text">{{ count }} 个工作</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
